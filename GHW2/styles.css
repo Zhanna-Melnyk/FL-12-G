@@ -1,0 +1,93 @@
+.wrapper {
+  width: 680px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+.sides {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.sides > div {
+  margin: 20px;
+}
+
+td {
+  width: 40px;
+  height: 40px;
+  background-color: #976f55;
+}
+
+tr.inner-row td.inner-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center;
+  background-size: 2px 100%, 100% 2px;
+}
+
+tr.first-row td.inner-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom, center;
+  background-size: 2px 50%, 100% 2px;
+}
+
+tr.last-row td.inner-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, center;
+  background-size: 2px 50%, 100% 2px;
+}
+
+tr.inner-row td.first-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, right;
+  background-size: 2px 100%, 50% 2px;
+}
+
+tr.inner-row td.last-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, left;
+  background-size: 2px 100%, 50% 2px;
+}
+
+tr.first-row td.first-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom, right;
+  background-size: 2px 50%, 50% 2px;
+}
+
+tr.first-row td.last-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom, left;
+  background-size: 2px 50%, 50% 2px;
+}
+
+tr.last-row td.first-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, right;
+  background-size: 2px 50%, 50% 2px;
+}
+
+tr.last-row td.last-cell {
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, left;
+  background-size: 2px 50%, 50% 2px;
+}
+
+td:hover {
+    background-image: linear-gradient(#fff, #fff) !important;
+    background-position: center center !important;
+    background-size: 50% 50% !important;
+}
