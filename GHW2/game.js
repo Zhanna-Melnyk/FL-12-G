@@ -1,4 +1,4 @@
-const boardSize = 15;
+const boardSize = 16;
 var board = document.getElementById('board');
 for (let i = 0; i <= boardSize + 1; i++) {
   var row = document.createElement('tr');
@@ -38,5 +38,10 @@ for (let i = 0; i <= boardSize + 1; i++) {
         cell.classList.add('inner-cell');
     }
     row.appendChild(cell);
+    var stone = document.createElement('div');
+    if (i >= 1 && i <= boardSize && j >= 1 && j <= boardSize) {
+      stone.classList.add('stone','empty');
+      cell.appendChild(stone);
+    }
   }
 }

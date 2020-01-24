@@ -1,3 +1,9 @@
+:root {
+  --board-color: #976f55;
+  --grid-color: rgba(0, 0, 0, 0.5);
+  --grid-thickness: 2px;
+}
+
 .wrapper {
   width: 680px;
   margin: 0 auto;
@@ -17,77 +23,104 @@ h1 {
   margin: 20px;
 }
 
+#board {
+  background-color: var(--board-color);
+}
+
 td {
   width: 40px;
   height: 40px;
-  background-color: #976f55;
 }
 
 tr.inner-row td.inner-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: center;
-  background-size: 2px 100%, 100% 2px;
+  background-size: var(--grid-thickness) 100%, 100% var(--grid-thickness);
 }
 
 tr.first-row td.inner-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, center;
-  background-size: 2px 50%, 100% 2px;
+  background-size: var(--grid-thickness) 50%, 100% var(--grid-thickness);
 }
 
 tr.last-row td.inner-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: top, center;
-  background-size: 2px 50%, 100% 2px;
+  background-size: var(--grid-thickness) 50%, 100% var(--grid-thickness);
 }
 
 tr.inner-row td.first-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: center, right;
-  background-size: 2px 100%, 50% 2px;
+  background-size: var(--grid-thickness) 100%, 50% var(--grid-thickness);
 }
 
 tr.inner-row td.last-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: center, left;
-  background-size: 2px 100%, 50% 2px;
+  background-size: var(--grid-thickness) 100%, 50% var(--grid-thickness);
 }
 
 tr.first-row td.first-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, right;
-  background-size: 2px 50%, 50% 2px;
+  background-size: var(--grid-thickness) 50%, 50% var(--grid-thickness);
 }
 
 tr.first-row td.last-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, left;
-  background-size: 2px 50%, 50% 2px;
+  background-size: var(--grid-thickness) 50%, 50% var(--grid-thickness);
 }
 
 tr.last-row td.first-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: top, right;
-  background-size: 2px 50%, 50% 2px;
+  background-size: var(--grid-thickness) 50%, 50% var(--grid-thickness);
 }
 
 tr.last-row td.last-cell {
-  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--grid-color), var(--grid-color)),
+    linear-gradient(var(--grid-color), var(--grid-color));
   background-repeat: no-repeat, no-repeat;
   background-position: top, left;
-  background-size: 2px 50%, 50% 2px;
+  background-size: var(--grid-thickness) 50%, 50% var(--grid-thickness);
 }
 
-td:hover {
-    background-image: linear-gradient(#fff, #fff) !important;
-    background-position: center center !important;
-    background-size: 50% 50% !important;
+.stone {
+  width: 36px;
+  height: 36px;
+  margin: 2px;
+}
+
+.stone {
+  background-image: radial-gradient(
+    circle closest-side,
+    rgba(255, 255, 255, 0.25) 95%,
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0;
+  transition: opacity 0 ease-out;
+}
+
+.stone.empty:hover {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
 }
