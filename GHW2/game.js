@@ -1,10 +1,10 @@
 const boardSize = 16;
 var board = document.getElementById('board');
 var table = document.createElement('table');
+var side = 1;
 board.appendChild(table);
 for (let i = 0; i <= boardSize + 1; i++) {
   var row = document.createElement('tr');
-  table.appendChild(row);
   switch (i) {
     case 0:
       row.classList.add('top-side');
@@ -21,6 +21,7 @@ for (let i = 0; i <= boardSize + 1; i++) {
     default:
       row.classList.add('inner-row');
   }
+  table.appendChild(row);
   for (let j = 0; j <= boardSize + 1; j++) {
     var cell = document.createElement('td');
     switch (j) {
@@ -56,6 +57,19 @@ for (let i = 0; i <= boardSize + 1; i++) {
         stone.classList.add('red');
       }
       cell.appendChild(stone);
+      stone.addEventListener(
+        'click',
+        (event) => {
+          event.target.classList.remove('empty');
+          if (side === 1) {
+            event.target.classList.add('black');
+          } else {
+            event.target.classList.add('white');
+          }
+          side *= -1;
+        },
+        { capture: true, once: true}
+      );
     }
   }
 }
