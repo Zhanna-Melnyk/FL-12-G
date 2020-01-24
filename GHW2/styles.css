@@ -108,16 +108,10 @@ tr.last-row td.last-cell {
   width: 36px;
   height: 36px;
   margin: 2px;
-}
-
-.stone {
-  background-image: radial-gradient(
-    circle closest-side,
-    rgba(255, 255, 255, 0.25) 95%,
-    rgba(255, 255, 255, 0)
-  );
+  border-radius: 18px;
   opacity: 0;
   transition: opacity 0 ease-out;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .stone.empty:hover {
