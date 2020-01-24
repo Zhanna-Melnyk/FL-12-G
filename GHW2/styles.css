@@ -4,27 +4,42 @@
   --grid-thickness: 2px;
 }
 
-.wrapper {
-  width: 680px;
-  margin: 0 auto;
+body {
+    text-align: center;
 }
+.wrapper {
+display: inline-block;
+margin: 0 auto;
+}
+
 h1 {
   text-align: center;
 }
+
 .sides {
+  font-size: 1.5em;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
-  font-size: 20px;
 }
 
 .sides > div {
   margin: 20px;
 }
 
+.message {
+  font-size: 1.5em;
+  text-align: center;
+}
+
 #board {
+  margin: 10px;
   background-color: var(--board-color);
+}
+
+#board table {
+  border: 0;
+  border-spacing: 0;
 }
 
 td {
@@ -32,6 +47,14 @@ td {
   height: 40px;
 }
 
+td.left-side,
+td.right-side {
+  width: 20px;
+}
+tr.top-side td,
+tr.bottom-side td {
+  height: 20px;
+}
 tr.inner-row td.inner-cell {
   background-image: linear-gradient(var(--grid-color), var(--grid-color)),
     linear-gradient(var(--grid-color), var(--grid-color));
@@ -109,12 +132,40 @@ tr.last-row td.last-cell {
   height: 36px;
   margin: 2px;
   border-radius: 18px;
-  opacity: 0;
-  transition: opacity 0 ease-out;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0;
 }
 
 .stone.empty:hover {
-  opacity: 1;
-  transition: opacity 500ms ease-out;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: background-color 0.3s linear;
+}
+
+.stone.black,
+.stone.white,
+.stone.red {
+  box-shadow: -2px -2px 6px rgba(0, 0, 0, 0.7),
+    inset 1px 1px 10px rgba(0, 0, 0, 0.3);
+  background-image: radial-gradient(
+    circle at bottom right,
+    rgba(255, 255, 255, 1) 0px,
+    rgba(255, 255, 255, 0) 26px
+  );
+}
+
+.stone.black {
+  background-color: #000;
+}
+
+.stone.white {
+  background-color: #ccc;
+}
+
+.stone.red {
+  background-color: #900;
+  background-image: radial-gradient(
+    circle at bottom right,
+    rgba(255, 255, 255, 0.8) 0px,
+    rgba(255, 255, 255, 0) 26px
+  );
 }
